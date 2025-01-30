@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta</title>
+    <link rel="icon" type="image/png" href="fiesta.png">
+    <title>Feliz Cumpleaños 🥳🥳</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="container-letter">
-            <div class="cover"></div>
-            <span class="heart">♥</span>
-            <p class="paper" id="mainMessage">
-                En este día especial de amor y amistad, celebremos los lazos que nos unen. Que la alegría y el cariño nos acompañen siempre. ¡Feliz día!
-            </p>
-            <div class="letter"></div>
+    <div class="container">
+        <div class="envelope">
+            <div class="front">
+                <div class="mail">
+                    <p>🤍Te quiero mucho🤍<br>(Haz clic para abrir)</p>
+                </div>
+            </div>
+            <div class="back"></div>
+            <div class="letter">
+                <h1>Mi querida <span id="name"></span>,</h1>
+                <p id="message"></p>
+                <p class="signature">Con todo mi amor,</p>
+                <p class="signature" id="sender"></p>
+            </div>
         </div>
-        <div class="options">
-            <button id="open">Abrir</button>
-            <button id="close">Cerrar</butto>
-        </div>
-    </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,53 +1,19 @@
-const urlSearchParams = new URLSearchParams(window.location.search)
+document.addEventListener("DOMContentLoaded", () => {
+    const envelope = document.querySelector(".envelope")
+    const nameElement = document.getElementById("name")
+    const messageElement = document.getElementById("message")
+    const senderElement = document.getElementById("sender")
 
-const messageCustom = urlSearchParams.get('message')
+    // Personaliza estos valores
+    const recipientName = "Fer"
+    const message = "Fer, nunca habia este tipo de cosas por alguien mas, pero te quiero agradecer por armarte de valor ese dia que mandaste mensaje. Nunca imagine que ese hola se iba a convertir en algo tan bonito, y que iba a conocer a alguien tan especial como tu. Te quiero desear un muy feliz 21vo cumpleaños, espero que disfrutes mucho tu dia y lo pases con las personas que mas quieres. Me gustas y te quiero muchisimo y eso aumenta con cada dia que pasa y te conozco mas. Gracias por ser tan especial y por hacerme tan feliz, te quiero mucho Fer ❤️❤️❤️."
+    const senderName = "Edson"
 
-if (messageCustom) {
-    const mainMessageElement = document.querySelector('#mainMessage')
-    mainMessageElement.textContent = decodeURI(messageCustom)
-}
+    nameElement.textContent = recipientName
+    messageElement.textContent = message
+    senderElement.textContent = senderName
 
-const btnOpenElement = document.querySelector('#open')
-const btnCloseElement = document.querySelector('#close')
-
-btnCloseElement.disabled = true
-
-btnOpenElement.addEventListener('click', ()=> {
-    btnOpenElement.disabled = true
-    btnCloseElement.disabled = false
-    const coverElement = document.querySelector('.cover')
-    coverElement.classList.add('open-cover')
-
-    setTimeout(()=>{
-        //
-        coverElement.style.zIndex = -1
-        
-        const paperElement = document.querySelector('.paper')
-        paperElement.classList.remove('close-paper')
-        paperElement.classList.add('open-paper')
-
-        // animacion del corazón
-        const heartElement = document.querySelector('.heart')
-        heartElement.style.display = 'block'
-    
-    }, 500)
-})
-
-btnCloseElement.addEventListener('click', ()=> {
-    btnOpenElement.disabled = false
-    btnCloseElement.disabled = true
-
-    const coverElement = document.querySelector('.cover')
-    const paperElement = document.querySelector('.paper')
-    paperElement.classList.remove('open-paper')
-    paperElement.classList.add('close-paper')
-    
-    setTimeout(()=>{
-        coverElement.style.zIndex = 0
-        coverElement.classList.remove('open-cover')
-
-        // animacion del corazón
-        const heartElement = document.querySelector('.heart')
-        heartElement.style.display = 'none'
-    },500)
+    envelope.addEventListener("click", () => {
+        envelope.classList.toggle("open")
+    })
 })
